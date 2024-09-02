@@ -1,5 +1,5 @@
 const { Sequelize } = require("sequelize");
-rquire("dotenv").config();
+require("dotenv").config();
 
 const sequelize =  new Sequelize(
     process.env.DB_NAME,
@@ -20,6 +20,6 @@ sequelize
     .catch((err) => {
         console.error('Não foi possível conectar ao mysql:', err);
     });
-    
+
 
 module.exports = sequelize;
