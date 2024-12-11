@@ -1,0 +1,12 @@
+# Ignorar arquivos de log
+
+
+# Ignorar diretórios
+
+
+# Ignorar arquivos temporários do sistema
+
+
+# Ignorar arquivos específicos
+server.js
+
