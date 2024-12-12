@@ -1,13 +1,10 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
+const Itens = require('./itens');
 
 const Pedido = sequelize.define('Pedido', {
     cliente: {
         type: DataTypes.STRING,
-        allowNull: false
-    },
-    itens: {
-        type: DataTypes.JSON,
         allowNull: false
     },
     total: {
@@ -22,8 +19,10 @@ const Pedido = sequelize.define('Pedido', {
     tableName: 'pedidos'
 });
 
-module.exports = Pedido;
+Pedido.hasMany(Itens, { foreignKey: 'pedidoId', as: 'pedidoItens' });
+Itens.belongsTo(Pedido, { foreignKey: 'pedidoId' });
 
+module.exports = Pedido;
 
 /* 
 tipos de dados numericos:
