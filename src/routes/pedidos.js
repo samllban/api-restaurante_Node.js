@@ -9,7 +9,7 @@ router.post('/', (req, res) => pedidoController.createPedido(req, res));
 
 router.get('/:id', (req, res) => pedidoController.readPedido(req, res));
 
-router.put('/:id', (req, res) => pedidoController.updatePedigo(req, res));
+router.put('/:id', (req, res) => pedidoController.updatePedido(req, res));
 
 router.delete('/:id', (req, res) => pedidoController.deletePedido(req, res));
 
